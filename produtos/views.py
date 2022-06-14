@@ -16,13 +16,13 @@ def adicionar(request):
   return HttpResponse(template.render({}, request))
 
 def addproduto(request):
-    n = request.POST["nomeprod"]
-    m = request.POST["material"]
-    t = request.POST["tamanho"]
-    p = request.POST["preco"]
-    q = request.POST["quantidade"]    
+    nomeprod = request.POST["nomeprod"]
+    material = request.POST["material"]
+    tamanho = request.POST["tamanho"]
+    preco = request.POST["preco"]
+    quantidade = request.POST["quantidade"]    
 
-    produto = Produtos(nomeprod=n, material=m, tamanho=t, preco=p, quantidade=q)
+    produto = Produtos(nomeprod=nomeprod,material=material,tamanho=tamanho,preco=preco,quantidade=quantidade)
     produto.save()
     return HttpResponseRedirect(reverse('index'))
 
@@ -40,11 +40,11 @@ def editar(request, id):
   return HttpResponse(template.render(context, request))
 
 def editarproduto(request, id):
-  n = request.POST["nomeprod"]
-  m = request.POST["material"]
-  t = request.POST["tamanho"]
-  p = request.POST["preco"]
-  q = request.POST["quantidade"]
+  nomeprod = request.POST["nomeprod"]
+  material = request.POST["material"]
+  tamanho = request.POST["tamanho"]
+  preco = request.POST["preco"]
+  quantidade = request.POST["quantidade"]
   produto = Produtos.objects.get(id=id)
   produto.nomeprod = nomeprod
   produto.material = material
