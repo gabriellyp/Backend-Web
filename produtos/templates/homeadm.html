@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Produtos Listados</h1>
+<p><a href="adicionar/">Adicionar Produto</a></p>
+
+<table border="1">
+{% for x in listaProdutos %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.nomeprod }}</td>
+<td>{{ x.material }}</td>
+<td>{{ x.tamanho }}</td>
+<td>{{ x.preco }}</td>
+<td>{{ x.quantidade }}</td>
+<td><a href="editar/{{ x.id }}">{{ x.id }}</a></td>
+<td><a href="apagar/{{ x.id }}">apagar</a></td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

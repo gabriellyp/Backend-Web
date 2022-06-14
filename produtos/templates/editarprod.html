@@ -1,0 +1,17 @@
+<h1>Editar Produto</h1>
+<form action="editarprod/{{ produto.id }}" method="post">
+{% csrf_token %}
+Nome:<br>
+<input name="nome" value="{{ produto.nomeprod }}">
+<br><br>
+Material:<br>
+<input name="material" value="{{ produto.material }}">
+<br><br>
+
+
+
+
+
+<input type="submit" value="Editar">
+</form>
+

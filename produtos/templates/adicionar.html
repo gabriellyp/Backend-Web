@@ -1,0 +1,13 @@
+<h1>Adicionar Produtos</h1>
+<form action="addproduto/" method="post">
+{% csrf_token %}
+Nome:<br><input name="nomeprod"><br><br>
+Material:<br><input name="material"><br><br>
+Tamanho:<br><input name="tamanho"><br><br>
+Preço:<br><input name="preco"><br><br>
+Quantidade: <br><input name="quantidade"><br><br>
+
+<input type="submit" value="Adicionar">
+</form>
+CSRF: Cross Site Request Forgeries
+
