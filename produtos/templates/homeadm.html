@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+ Tr{
+   border=1
+   align=center
+ }
+</style>
+</head>
+
 <body>
 	<h1>Produtos Listados</h1>
 <p><a href="adicionar/">Adicionar Produto</a></p>
 
-<table border="1">
+<table style="text-align: center;">
+    <Tr>
+        <Th>Id</Th>
+        <Th>Nome do Produto</Th>
+        <Th>Material</Th>
+        <th>Tamanho</th>
+        <Th>Preço</Th>
+        <Th>Quantidade</Th>
+        <Th>Ações</Th>
+        </Tr>
 {% for x in listaProdutos %}
-<tr>
-<td>{{ x.id }}</td>
-<td>{{ x.nomeprod }}</td>
-<td>{{ x.material }}</td>
-<td>{{ x.tamanho }}</td>
-<td>{{ x.preco }}</td>
-<td>{{ x.quantidade }}</td>
-<td><a href="editar/{{ x.id }}">{{ x.id }}</a></td>
-<td><a href="apagar/{{ x.id }}">apagar</a></td>
-</tr>
+  <Tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.nomeprod }}</td>
+        <td>{{ x.material }}</td>
+        <td>{{ x.tamanho }}</td>
+        <td>{{ x.preco }}</td>
+        <td>{{ x.quantidade }}</td>
+       <td>
+          <a href="editar/{{ x.id }}">Editar</a>
+          <a href="apagar/{{ x.id }}">Excluir</a>
+       </td>
+  </Tr>    
 {% endfor %}
 </table>
 

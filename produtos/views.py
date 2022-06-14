@@ -33,7 +33,7 @@ def apagar(request, id):
 
 def editar(request, id):
   produto = Produtos.objects.get(id=id)
-  template = loader.get_template('editar.html')
+  template = loader.get_template('editarprod.html')
   context = {
     'produto': produto,
   }
