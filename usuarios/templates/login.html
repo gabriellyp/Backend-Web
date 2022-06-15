@@ -1,0 +1,39 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Lua de Prata</title>
+</head>
+
+<body>
+    <div style="display: flex;align-items: center;flex-direction: row;height: 100vh;
+    width: 100%;justify-content: center;font-size: 15px;">
+            <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div style="margin-bottom: 20px;">
+                        <h2>Login</h2>
+                        <p>Realize seu login para ter acesso ao sistema.</p>
+                    </div>
+                    <div style="display: flex;flex-direction: column;margin-bottom: 20px;">
+                        {{form_login.username.errors}}
+                        <label style="margin-top: 5px;">Username: </label>
+                        {{form_login.username}}
+                        
+                        {{form_login.password.errors}}
+                        <label style="margin-top: 5px;">Senha: </label>
+                        {{form_login.password}}
+
+                    </div>
+                    <div style="display: flex;justify-content: center;">
+                        <button style="background-color: #93A9D1;border: 1px solid #93A9D1;
+                        border-radius: 10px;width: 240px;height: 35px;
+                        color: #fff;font-size: 15px;" type="submit">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

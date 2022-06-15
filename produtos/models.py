@@ -6,6 +6,5 @@ class Produtos(models.Model):
   preco = models.CharField(max_length=8)
   quantidade = models.CharField(max_length=5)
   
-
 # Create your models here.
 

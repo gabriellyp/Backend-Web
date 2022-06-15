@@ -2,8 +2,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Produtos
 from django.urls import reverse
+from django.views.decorators.http import require_POST
+from django.contrib.auth.models import User
 
-def index(request):
+def homeadm(request):
   listaProdutos = Produtos.objects.all().values()
   template = loader.get_template('homeadm.html')
   context = {
@@ -24,12 +26,12 @@ def addproduto(request):
 
     produto = Produtos(nomeprod=nomeprod,material=material,tamanho=tamanho,preco=preco,quantidade=quantidade)
     produto.save()
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('homeadm'))
 
 def apagar(request, id):
   produto = Produtos.objects.get(id=id)
   produto.delete()
-  return HttpResponseRedirect(reverse('index'))
+  return HttpResponseRedirect(reverse('homeadm'))
 
 def editar(request, id):
   produto = Produtos.objects.get(id=id)
@@ -52,5 +54,5 @@ def editarproduto(request, id):
   produto.preco = preco
   produto.quantidade = quantidade
   produto.save()
-  return HttpResponseRedirect(reverse('index'))
+  return HttpResponseRedirect(reverse('homeadm'))
 # Create your views here.
