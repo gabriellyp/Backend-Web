@@ -1,26 +1,34 @@
 <div style="display: flex;align-items: center;
-flex-direction: row;height: 100vh;
+flex-direction: column;height: 100vh;
 justify-content: center;">
     <h1>Editar Produto</h1>
-    <div>
-        <form action="editarproduto/{{ produto.id }}" method="post">
+    <div style="display: flex;flex-direction: column;justify-content: center;
+    align-items: center;">
+        <form style="display: flex; flex-direction: column;" action="editarproduto/{{ produto.id }}" method="post">
             {% csrf_token %}
             Nome do Produto:<br>
             <input name="nomeprod" value="{{ produto.nomeprod }}">
-            <br><br>
+            <br>
             Material:<br>
             <input name="material" value="{{ produto.material }}">
-            <br><br>
+            <br>
             Tamanho:<br>
             <input name="tamanho" value="{{ produto.tamanho }}">
-            <br><br>
+            <br>
             Preço:<br>
             <input name="preco" value="{{ produto.tamanho }}">
-            <br><br>
+            <br>
             Quantidade:<br>
             <input name="quantidade" value="{{ produto.quantidade }}">
-            <br><br>
-            <input type="submit" value="Editar">
+            <br>
+            <input style="background-color: #93A9D1;
+            border: 1px solid #93A9D1;
+            border-radius: 10px;
+            width: 240px;
+            height: 35px;
+            color: #fff;
+            font-size: 15px;
+            margin-top: 20px;" type="submit" value="Editar">
         </form>
     </div>
 

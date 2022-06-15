@@ -1,16 +1,16 @@
 <div style="display: flex;align-items: center;
-flex-direction: row;height: 100vh;
+flex-direction: column;height: 100vh;
 justify-content: center;">
     <h1>Adicionar Produtos</h1>
     <div style="display: flex;flex-direction: column;justify-content: center;
         align-items: center;">
-        <form action="addproduto/" method="post">
+        <form  style="display: flex; flex-direction: column;" action="addproduto/" method="post">
             {% csrf_token %}
-            Nome:<br><input name="nomeprod"><br><br>
-            Material:<br><input name="material"><br><br>
-            Tamanho:<br><input name="tamanho"><br><br>
-            Preço:<br><input name="preco"><br><br>
-            Quantidade: <br><input name="quantidade"><br><br>
+            Nome:<br><input name="nomeprod"><br>
+            Material:<br><input name="material"><br>
+            Tamanho:<br><input name="tamanho"><br>
+            Preço:<br><input name="preco"><br>
+            Quantidade: <br><input name="quantidade">
 
             <input style="background-color: #93A9D1;
             border: 1px solid #93A9D1;
@@ -18,7 +18,8 @@ justify-content: center;">
             width: 240px;
             height: 35px;
             color: #fff;
-            font-size: 15px;" type="submit" value="Adicionar">
+            font-size: 15px;
+            margin-top: 20px;" type="submit" value="Adicionar">
         </form>
     </div>
 

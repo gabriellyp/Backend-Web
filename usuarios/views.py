@@ -4,6 +4,9 @@ from django.template import loader
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.template.loader import render_to_string
+from usuarios import urls
+from produtos import models
+
 
 def cadastro(request):
   if request.method == "POST":
@@ -16,7 +19,7 @@ def cadastro(request):
   context = {'form_usuario': form_usuario}
   return render(request, 'cadastrar.html', context)
 
-def login(request):
+def loginuser(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -31,5 +34,14 @@ def login(request):
     return render(request, 'login.html', {'form_login': form_login})
 
 def telaprincipal(request):
+    listaProdutos = models.Produtos.objects.all().values()
+    context = {
+       'listaProdutos': listaProdutos,
+    }
     return render(request, 'telaprincipal.html')
+
+
+def sair(request):
+    logout(request)
+    return HttpResponseRedirect('loginuser.html')
 # Create your views here.

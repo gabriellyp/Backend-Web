@@ -4,7 +4,9 @@ from .models import Produtos
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_protect
 
+@csrf_protect
 def homeadm(request):
   listaProdutos = Produtos.objects.all().values()
   template = loader.get_template('homeadm.html')

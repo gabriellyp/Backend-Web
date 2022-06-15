@@ -1,1 +1,30 @@
-<p>tela principal</p>
+
+<div>
+        <table>
+                
+                        <Tr>
+                                <Th>Id</Th>
+                                <Th>Nome do Produto</Th>
+                                <Th>Material</Th>
+                                <th>Tamanho</th>
+                                <Th>Preço</Th>
+                                <Th>Quantidade</Th>
+                                <Th>Ações</Th>
+                        </Tr>
+                
+               
+                        {% for x in listaProdutos %}
+
+                        <Tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.nomeprod }}</td>
+                                <td>{{ x.material }}</td>
+                                <td>{{ x.tamanho }}</td>
+                                <td>{{ x.preco }}</td>
+                                <td>{{ x.quantidade }}</td>
+                        </Tr>
+                        {% endfor %}
+                
+        </table>
+</div>
+</div>
